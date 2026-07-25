@@ -22,6 +22,59 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 	<link rel="stylesheet" href="css/icomoon.css">
 	<link rel="stylesheet" href="css/style.css">
+	<style>
+		/* Mobile View (Default) */
+		.hero-section {
+			position: relative;
+			background: url('images/m_d_app.png') center/cover no-repeat;
+			padding: 2rem;
+		}
+
+		/* Optional overlay for better text readability on mobile */
+		.hero-section::before {
+			content: '';
+			position: absolute;
+			inset: 0;
+			background: rgba(0, 0, 0, 0.5);
+			z-index: 1;
+		}
+
+		.text {
+			position: relative;
+			z-index: 2;
+		}
+
+		.hero-image {
+			display: none;
+			/* Hide image element on mobile */
+		}
+
+		/* Desktop View (768px and above) */
+		@media (min-width: 768px) {
+			.hero-section {
+				display: flex;
+				align-items: center;
+				background: none;
+				/* Remove background image */
+			}
+
+			.hero-section::before {
+				display: none;
+			}
+
+			.hero-image {
+				display: block;
+				flex: 1;
+				height: 400px;
+				background: url('images/m_d_app.png') center/cover no-repeat;
+			}
+
+			.text {
+				flex: 1;
+				padding-left: 2rem;
+			}
+		}
+	</style>
 </head>
 
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
@@ -52,87 +105,17 @@
 
 	<!-- Header slide section. -->
 	<section id="home-section" class="hero">
-		<div class="home-slider  owl-carousel">
-
-			<div class="slider-item ">
-				<div class="overlay"></div>
-				<div class="container">
-					<div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end"
-						data-scrollax-parent="true">
-						<div class="one-third js-fullheight order-md-last img"
-							style="background-image:url(images/m_d_app.png);">
-							<div class="overlay"></div>
-						</div>
-						<div class="one-forth d-flex  align-items-center ftco-animate"
-							data-scrollax=" properties: { translateY: '70%' }">
-							<div class="text">
-								<span class="subheading">Greetings!</span>
-								<h1 class="mb-4 mt-3">I'm <span>Linus</span></h1>
-								<h2 class="mb-4">A Freelance Mobile App Developer</h2>
-								<p>
-									<a href="#hire-form" class="btn btn-primary py-3 px-4">Hire
-										me</a>
-									<a href="https://www.linkedin.com/in/linus-okolo-267a0b302"
-										class="btn btn-white btn-outline-white py-3 px-4">My works</a>
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="slider-item ">
-				<div class="overlay"></div>
-				<div class="container">
-					<div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end"
-						data-scrollax-parent="true">
-						<div class="one-third js-fullheight order-md-last img"
-							style="background-image:url(images/m_d_web.png);">
-							<div class="overlay"></div>
-						</div>
-						<div class="one-forth d-flex  align-items-center ftco-animate"
-							data-scrollax=" properties: { translateY: '70%' }">
-							<div class="text">
-								<span class="subheading">Greetings!</span>
-								<h1 class="mb-4 mt-3">I'm <span>Linus</span></h1>
-								<h2 class="mb-4">A Freelance Web Designer</h2>
-								<p>
-									<a href="#hire-form" class="btn btn-primary py-3 px-4">Hire
-										me</a>
-									<a href="https://www.linkedin.com/in/linus-okolo-267a0b302"
-										class="btn btn-white btn-outline-white py-3 px-4">My works</a>
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="slider-item ">
-				<div class="overlay"></div>
-				<div class="container">
-					<div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end"
-						data-scrollax-parent="true">
-						<div class="one-third js-fullheight order-md-last img"
-							style="background-image:url(images/m_me_brown.png);">
-							<div class="overlay"></div>
-						</div>
-						<div class="one-forth d-flex  align-items-center ftco-animate"
-							data-scrollax=" properties: { translateY: '70%' }">
-							<div class="text">
-								<span class="subheading">Greetings!</span>
-								<h1 class="mb-4 mt-3">I'm <span>Linus</span></h1>
-								<h2 class="mb-4">A Cloud Engineer (AWS, Azure & GCP)</h2>
-								<p>
-									<a href="#hire-form" class="btn btn-primary py-3 px-4">Hire
-										me</a>
-									<a href="https://www.linkedin.com/in/linus-okolo-267a0b302"
-										class="btn btn-white btn-outline-white py-3 px-4">My works</a>
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
+		<div class="hero-section">
+			<div class="hero-image"></div>
+			<div class="text">
+				<span class="subheading">Greetings!</span>
+				<h1 class="mb-4 mt-3">I'm <span>Linus</span></h1>
+				<h2 class="mb-4">A Freelance Mobile App Developer</h2>
+				<p>
+					<a href="#hire-form" class="btn btn-primary py-3 px-4">Hire me</a>
+					<a href="https://www.linkedin.com/in/linus-okolo-267a0b302"
+						class="btn btn-white btn-outline-white py-3 px-4">My works</a>
+				</p>
 			</div>
 		</div>
 	</section>
@@ -764,7 +747,7 @@
 				<div class="col-md-6 order-md-last d-flex">
 					<form action="https://api.web3forms.com/submit" method="POST"
 						class="bg-light p-4 p-md-5 contact-form">
-						
+
 						<input type="hidden" name="access_key" value="b3d368eb-d531-4308-b776-794898fc5d44">
 
 						<div class="form-group">
@@ -801,10 +784,15 @@
 					<div class="ftco-footer-widget mb-4">
 						<h2 class="ftco-heading-2">Our Social Media</h2>
 						<ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-							<li class="ftco-animate"><a href="https://www.tiktok.com/@001_tech_wizard?_r=1&_t=ZS-98KTK1rBgjX" aria-label="TikTok"><span class="fab fa-tiktok"></span></a></li>
-							<li class="ftco-animate"><a href="https://www.linkedin.com/in/linus-okolo-267a0b302" aria-label="LinkedIn"><span class="fab fa-linkedin-in"></span></a></li>
-							<li class="ftco-animate"><a href="https://api.whatsapp.com/send?phone=+2348148478414" aria-label="WhatsApp"><span class="fab fa-whatsapp"></span></a></li>
-							<li class="ftco-animate"><a href="https://github.com/LinusNnamdi/utilities" aria-label="GitHub"><span class="fab fa-github"></span></a></li>
+							<li class="ftco-animate"><a
+									href="https://www.tiktok.com/@001_tech_wizard?_r=1&_t=ZS-98KTK1rBgjX"
+									aria-label="TikTok"><span class="fab fa-tiktok"></span></a></li>
+							<li class="ftco-animate"><a href="https://www.linkedin.com/in/linus-okolo-267a0b302"
+									aria-label="LinkedIn"><span class="fab fa-linkedin-in"></span></a></li>
+							<li class="ftco-animate"><a href="https://api.whatsapp.com/send?phone=+2348148478414"
+									aria-label="WhatsApp"><span class="fab fa-whatsapp"></span></a></li>
+							<li class="ftco-animate"><a href="https://github.com/LinusNnamdi/utilities"
+									aria-label="GitHub"><span class="fab fa-github"></span></a></li>
 						</ul>
 					</div>
 				</div>
@@ -826,11 +814,16 @@
 					<div class="ftco-footer-widget mb-4">
 						<h2 class="ftco-heading-2">Services</h2>
 						<ul class="list-unstyled">
-							<li><a href="#hire-form"><span class="icon-long-arrow-right mr-2"></span>Mobile (ios & Android) App Development</a></li>
-							<li><a href="#hire-form"><span class="icon-long-arrow-right mr-2"></span>Web Development</a></li>
-							<li><a href="#hire-form"><span class="icon-long-arrow-right mr-2"></span>Project Management</a></li>
-							<li><a href="#hire-form"><span class="icon-long-arrow-right mr-2"></span>Cloud Services</a></li>
-							<li><a href="#hire-form"><span class="icon-long-arrow-right mr-2"></span>Learn any of the Skills</a></li>
+							<li><a href="#hire-form"><span class="icon-long-arrow-right mr-2"></span>Mobile (ios &
+									Android) App Development</a></li>
+							<li><a href="#hire-form"><span class="icon-long-arrow-right mr-2"></span>Web Development</a>
+							</li>
+							<li><a href="#hire-form"><span class="icon-long-arrow-right mr-2"></span>Project
+									Management</a></li>
+							<li><a href="#hire-form"><span class="icon-long-arrow-right mr-2"></span>Cloud Services</a>
+							</li>
+							<li><a href="#hire-form"><span class="icon-long-arrow-right mr-2"></span>Learn any of the
+									Skills</a></li>
 						</ul>
 					</div>
 				</div>
@@ -841,11 +834,11 @@
 						<div class="block-23 mb-3">
 							<ul>
 								<li><span class="icon icon-map-marker"></span><span class="text">
-									Nigeria
-								</span></li>
+										Nigeria
+									</span></li>
 								<li><a href="#hire-form"><span class="icon icon-phone"></span><span class="text">
-									+2 3481 4847 8414
-								</span></a></li>
+											+2 3481 4847 8414
+										</span></a></li>
 								<li><a href="#hire-form"><span class="icon icon-envelope"></span><span
 											class="text">linusnnamdiokolo@gmail.com</span></a></li>
 							</ul>
